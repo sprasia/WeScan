@@ -133,7 +133,7 @@ import AVFoundation
 }
 
 /// Data structure containing information about a scan, including both the image and an optional PDF.
-@objcMembers public class ImageScannerScan {
+@objcMembers public class ImageScannerScan: NSObject {
     public enum ImageScannerError: Error {
         case failedToGeneratePDF
     }
