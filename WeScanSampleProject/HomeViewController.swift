@@ -115,7 +115,7 @@ final class HomeViewController: UIViewController {
     }
     
     func scanImage() {
-        let scannerViewController = ImageScannerController(delegate: self)
+        let scannerViewController = ImageScannerController(dummy: true, delegate: self)
         scannerViewController.modalPresentationStyle = .fullScreen
         
         if #available(iOS 13.0, *) {
@@ -160,7 +160,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         picker.dismiss(animated: true)
         
         guard let image = info[.originalImage] as? UIImage else { return }
-        let scannerViewController = ImageScannerController(image: image, delegate: self)
+        let scannerViewController = ImageScannerController(dummy: true, image: image, delegate: self)
         present(scannerViewController, animated: true)
     }
 }

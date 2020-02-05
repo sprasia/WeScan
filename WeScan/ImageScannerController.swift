@@ -60,7 +60,7 @@ import AVFoundation
         return .portrait
     }
     
-    public required init(image: UIImage? = nil, delegate: ImageScannerControllerDelegate? = nil) {
+    @objc public required init(dummy: Bool, image: UIImage? = nil, delegate: ImageScannerControllerDelegate? = nil) {
         super.init(rootViewController: ScannerViewController())
         
         self.imageScannerDelegate = delegate
