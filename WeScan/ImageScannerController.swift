@@ -133,7 +133,7 @@ import AVFoundation
 }
 
 /// Data structure containing information about a scan, including both the image and an optional PDF.
-public struct ImageScannerScan {
+@objcMembers public class ImageScannerScan {
     public enum ImageScannerError: Error {
         case failedToGeneratePDF
     }
@@ -151,7 +151,11 @@ public struct ImageScannerScan {
         
     }
     
-    mutating func rotate(by rotationAngle: Measurement<UnitAngle>) {
+    public init(image: UIImage){
+        self.image = image
+    }
+    
+    func rotate(by rotationAngle: Measurement<UnitAngle>) {
         guard rotationAngle.value != 0, rotationAngle.value != 360 else { return }
         image = image.rotated(by: rotationAngle) ?? image
     }
