@@ -159,7 +159,7 @@ public struct ImageScannerScan {
 
 /// Data structure containing information about a scanning session.
 /// Includes the original scan, cropped scan, detected rectangle, and whether the user selected the enhanced scan. May also include an enhanced scan if no errors were encountered.
-public struct ImageScannerResults {
+public class ImageScannerResults {
     
     /// The original scan taken by the user, prior to the cropping applied by WeScan.
     public var originalScan: ImageScannerScan
